@@ -14,6 +14,11 @@ Responda em português. Writeups em inglês.
 
 `<Categoria>/<NomeDoChallenge>/` com `README.md` (card) + `WRITEUP.md` (segue `WRITEUP_TEMPLATE.md`) + artefatos/solve. Categorias: `Web`, `Crypto`, `Forensics`, `Pwn`, `Rev`, `PPC` (programação), `OSINT`, `ARG`, `Misc` (atividades práticas e o resto). Prints em `img/`. Ao mudar status de um reto, atualizar a tabela do `README.md` raiz. Artefatos >100 MB vão para o `.gitignore` (sha256 no writeup).
 
+## Skills locais (`.claude/skills/`)
+
+- `ctf-challenge-flow` — processo de cada reto: ao começar cria pasta+branch padrão; ao terminar (só após 14/11 17h) escreve o `WRITEUP.md`, atualiza a tabela do `README.md` e abre o PR. Colada a estas regras.
+- `ctf-solver` — arsenal de técnicas por categoria (Web/Crypto/Forensics/Pwn/Rev/OSINT/ARG/PPC/Misc) + captação da técnica nova em `references/capture-log.md` ao fechar o reto. Complementa o `/dispatch`.
+
 ## Regras invioláveis
 
 1. NUNCA executar nada contra servidor/instância do reto, plataforma ou rede do evento (curl, nc, nmap, ssh, requests, browser...). Quem roda é o usuário.
