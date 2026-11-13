@@ -1,0 +1,48 @@
+# AI / agent tooling
+.claude/
+.serena/
+.remember/
+.codex/
+.cursor/
+.gemini/
+.agents/
+.windsurf/
+.continue/
+.aider*
+.playwright-mcp/
+.mcp.json
+CLAUDE.local.md
+AGENTS.md
+GEMINI.md
+
+# Secrets / event access (VPN, keys, tokens)
+.env
+*.env
+*.conf
+*.ovpn
+*.pem
+*.key
+id_rsa*
+*_key
+*_key.pub
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Debug / RE cruft
+core
+core.*
+.gdb_history
+*.gpr
+*.rep/
+*.lock~
+
+# OS / editor
+.DS_Store
+*.swp
+*~
+
+# Challenge artifacts over GitHub's 100 MB limit (sha256 in each WRITEUP.md)
