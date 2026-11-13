@@ -66,7 +66,7 @@ Template do card (`<Categoria>/<Nome>/README.md`):
 ## Ao TERMINAR (somente após 14/11 17h)
 
 1. **Writeup.** Copiar `WRITEUP_TEMPLATE.md` → `<Categoria>/<Nome>/WRITEUP.md`,
-   preencher **em inglês**. Anonimizar credenciais reais e hosts de infra
+   preencher **em português**. Anonimizar credenciais reais e hosts de infra
    (`<HOST>`, `<USER>`, `<TOKEN>`); flags e valores derivados do reto ficam.
    Artefato >100 MB vai pro `.gitignore` com sha256 no writeup.
 2. **README raiz.** Atualizar a tabela de desafios (nome, categoria, dificuldade,

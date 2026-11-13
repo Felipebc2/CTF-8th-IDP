@@ -1,6 +1,6 @@
 # 8º Hackathon IDP — III Capture The Flag 2026.2
 
-Responda em português. Writeups em inglês.
+Responda em português. Writeups em português.
 
 - Regulamento completo: `docs/regulamento.md` (fonte de verdade; casos omissos = organização)
 - Presencial, térreo do IDP Norte. Formato jeopardy, pontuação dinâmica, placar pode congelar no final
@@ -34,4 +34,4 @@ Plugin `ctf-dispatch` habilitado neste projeto. O formato `IDP{...}` é gravado 
 
 ## Writeups
 
-Só depois do encerramento (14/11 17h) e com tudo concluído: `WRITEUP.md` por reto seguindo `WRITEUP_TEMPLATE.md`, em inglês, e tabela do `README.md` atualizada. Anonimizar credenciais reais e hosts de infra (`<HOST>`, `<USER>`, `<TOKEN>`); flags e valores derivados do reto ficam.
+Só depois do encerramento (14/11 17h) e com tudo concluído: `WRITEUP.md` por reto seguindo `WRITEUP_TEMPLATE.md`, em português, e tabela do `README.md` atualizada. Anonimizar credenciais reais e hosts de infra (`<HOST>`, `<USER>`, `<TOKEN>`); flags e valores derivados do reto ficam.
