@@ -1,5 +1,4 @@
 # AI / agent tooling
-.claude/
 .serena/
 .remember/
 .codex/
@@ -46,3 +45,7 @@ core.*
 *~
 
 # Challenge artifacts over GitHub's 100 MB limit (sha256 in each WRITEUP.md)
+
+# Local agent settings (machine-specific; skills ARE tracked)
+.claude/settings.local.json
+.claude/skills/ctf-solver/references/capture-log.md

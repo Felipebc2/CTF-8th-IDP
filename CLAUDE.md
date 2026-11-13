@@ -1,6 +1,6 @@
 # 8º Hackathon IDP — III Capture The Flag 2026.2
 
-Responda em português. Writeups em inglês.
+Responda em português. Writeups em português.
 
 - Regulamento completo: `docs/regulamento.md` (fonte de verdade; casos omissos = organização)
 - Presencial, térreo do IDP Norte. Formato jeopardy, pontuação dinâmica, placar pode congelar no final
@@ -13,6 +13,11 @@ Responda em português. Writeups em inglês.
 ## Estrutura
 
 `<Categoria>/<NomeDoChallenge>/` com `README.md` (card) + `WRITEUP.md` (segue `WRITEUP_TEMPLATE.md`) + artefatos/solve. Categorias: `Web`, `Crypto`, `Forensics`, `Pwn`, `Rev`, `PPC` (programação), `OSINT`, `ARG`, `Misc` (atividades práticas e o resto). Prints em `img/`. Ao mudar status de um reto, atualizar a tabela do `README.md` raiz. Artefatos >100 MB vão para o `.gitignore` (sha256 no writeup).
+
+## Skills locais (`.claude/skills/`)
+
+- `ctf-challenge-flow` — processo de cada reto: ao começar cria pasta+branch padrão; ao terminar (só após 14/11 17h) escreve o `WRITEUP.md`, atualiza a tabela do `README.md` e abre o PR. Colada a estas regras.
+- `ctf-solver` — arsenal de técnicas por categoria (Web/Crypto/Forensics/Pwn/Rev/OSINT/ARG/PPC/Misc) + captação da técnica nova em `references/capture-log.md` ao fechar o reto. Complementa o `/dispatch`.
 
 ## Regras invioláveis
 
@@ -29,4 +34,4 @@ Plugin `ctf-dispatch` habilitado neste projeto. O formato `IDP{...}` é gravado 
 
 ## Writeups
 
-Só depois do encerramento (14/11 17h) e com tudo concluído: `WRITEUP.md` por reto seguindo `WRITEUP_TEMPLATE.md`, em inglês, e tabela do `README.md` atualizada. Anonimizar credenciais reais e hosts de infra (`<HOST>`, `<USER>`, `<TOKEN>`); flags e valores derivados do reto ficam.
+Só depois do encerramento (14/11 17h) e com tudo concluído: `WRITEUP.md` por reto seguindo `WRITEUP_TEMPLATE.md`, em português, e tabela do `README.md` atualizada. Anonimizar credenciais reais e hosts de infra (`<HOST>`, `<USER>`, `<TOKEN>`); flags e valores derivados do reto ficam.
