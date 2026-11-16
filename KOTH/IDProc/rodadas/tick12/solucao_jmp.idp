@@ -1,0 +1,5 @@
+# Tick 12 - Eco controlado (fallback se nao houver wrap)
+[N0]
+L: MOV INPUT ACC
+MOV ACC OUTPUT
+JMP L

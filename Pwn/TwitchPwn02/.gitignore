@@ -1,0 +1,12 @@
+# compiled static binaries
+recon
+recon2
+recon3
+exploit1
+exploit2
+exploit3
+exploit4
+exploit5
+# intermediate images
+*.png
+*.ppm

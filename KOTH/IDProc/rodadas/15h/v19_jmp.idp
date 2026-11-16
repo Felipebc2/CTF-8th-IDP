@@ -1,0 +1,22 @@
+[N0]
+mov a_in, acc
+mov acc, dir
+[N2]
+la: mov esq, acc
+jeq drb
+mov acc, output
+mov dir, acc
+jeq dra
+mov acc, output
+jmp la
+dra: mov esq, acc
+jeq la
+mov acc, output
+jmp dra
+drb: mov dir, acc
+jeq la
+mov acc, output
+jmp drb
+[N1]
+mov b_in, acc
+mov acc, esq

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>🖊️ Caligrafia</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖊️</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar" id="inicio">
+        <div class="navbar-inner">
+            <a class="marca" href="#inicio" aria-label="Escrita à mão">
+                <svg class="marca-icone" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                </svg>
+            </a>
+            <button class="hamburguer" id="btn-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="menu" id="menu">
+                <a href="#inicio">Início</a>
+                <a href="#desenhar">Escrever</a>
+                <a href="#arquivos">Arquivos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <section class="cabecalho">
+            <h1>Teste sua caligrafia</h1>
+        </section>
+
+        <div class="grade">
+            <div class="coluna-principal">
+                <section class="cartao" id="desenhar">
+                    <div class="quadro">
+                        <canvas id="quadro" width="900" height="300" aria-label="Quadro de desenho"></canvas>
+                        <div class="placeholder" id="placeholder" aria-hidden="true">Escreva aqui</div>
+                    </div>
+
+                    <div class="acoes">
+                        <div class="acoes-secundarias">
+                            <button type="button" class="botao" id="btn-desfazer" disabled>Desfazer</button>
+                            <button type="button" class="botao" id="btn-limpar" disabled>Limpar</button>
+                        </div>
+                        <button type="button" class="botao botao-destaque" id="btn-reconhecer" disabled>Reconhecer</button>
+                    </div>
+                </section>
+
+                <section class="cartao" id="resultado">
+                    <h2>Saída</h2>
+                    <pre class="texto-reconhecido vazio" id="texto-reconhecido">Desenhe algo e clique em Reconhecer.</pre>
+                    <p class="mensagem" id="mensagem" role="status" aria-live="polite"></p>
+                    <div class="acoes acoes-fim">
+                        <button type="button" class="botao botao-destaque" id="btn-salvar" disabled>Salvar</button>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="coluna-lateral">
+                <section class="cartao" id="arquivos">
+                    <h2>Arquivos</h2>
+                    <ul class="lista-arquivos" id="lista-arquivos">
+                        <li class="vazio">Nenhum arquivo ainda</li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <span>© 2026 Escrita à mão</span>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

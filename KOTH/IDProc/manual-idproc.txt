@@ -1,0 +1,353 @@
+IDPROC
+Manual de Referência do Processador
+Innovative Digital Processors
+Edição 1
+
+
+
+
+  SUMÁRIO
+
+
+
+
+  Sumário
+     1. Introdução
+        1.1 Convenções
+     2. Organização da máquina
+        2.1 Núcleos
+        2.2 Portas e ligações
+     3. Dados e registradores
+     4. Formato de programa
+        4.1 Linhas, comentários e rótulos
+     5. Conjunto de instruções
+        5.1 Transferência
+           MOV origem destino
+        5.2 Acumulador
+        5.3 Controle de fluxo
+     6. Comunicação
+     7. Modelo de execução
+     8. Referência rápida
+
+
+
+
+    INNOVATIVE DIGITAL PROCESSORS
+IDProc
+MANUAL DE REFERÊNCIA DO PROCESSADOR
+
+
+Edição 1
+1. Introdução
+O IDProc é um processador programável, composto por um ou mais núcleos
+independentes. Cada núcleo executa seu próprio programa e se comunica com o exterior,
+ou com outros núcleos, por portas definidas na configuração da máquina.
+
+Este documento especifica a linguagem de montagem IDProc, o modelo de dados e as
+regras de execução. A configuração de uma máquina determina os núcleos, portas,
+ligações e canais externos disponíveis.
+
+
+
+
+1.1 Convenções
+
+ Forma                       Significado
+
+ MOV ACC OUTPUT              texto escrito literalmente em um programa
+
+ origem                      elemento substituído por um operando válido
+
+ ACC                         registrador da arquitetura
+
+ rótulo:                     destino local de salto
+
+
+
+Mnemônicos, registradores, portas e rótulos não diferenciam maiúsculas de minúsculas.
+Este manual usa maiúsculas para mnemônicos e elementos da arquitetura.
+2. Organização da máquina
+Uma máquina IDProc é formada por núcleos, portas e canais externos. A posição visual
+de um núcleo não cria conexões; somente as ligações declaradas fazem parte da
+arquitetura.
+
+
+  CANAL DE ENTRADA          NÚCLEO N0            NÚCLEO N1      CANAL DE SAÍDA
+
+
+          INPUT ───────► [ porta ]               [ porta ] ───────► OUTPUT
+                               │                     │
+                               └──── ligação ────┘
+
+
+
+
+2.1 Núcleos
+Cada núcleo possui programa, ACC , BAK , IPT e portas próprios. Não existe memória
+compartilhada: um núcleo não lê diretamente registradores, programa ou portas de outro
+núcleo.
+
+
+ Elemento                 Função
+
+
+ programa                 sequência local de instruções
+
+ ACC                      acumulador da unidade aritmética
+
+ BAK                      registrador auxiliar
+
+ IPT                      ponteiro para a próxima instrução
+
+ portas                   pontos locais de comunicação
+
+
+
+
+2.2 Portas e ligações
+As portas pertencem ao núcleo que as declara. Cada porta tem direção in , out ou io ,
+indicando se recebe, envia, ou pode realizar ambos conforme a ligação. Nomes como
+CIMA , BAIXO , ESQ e DIR podem indicar onde uma porta é desenhada, mas não têm
+semântica própria.
+
+Uma ligação interna não possui fila intermediária. Uma transferência só ocorre quando a
+instrução que envia e a instrução que recebe estão prontas no mesmo ciclo.
+3. Dados e registradores
+Todos os valores são inteiros com sinal de 8 bits.
+
+
+  MENOR VALOR                                                   MAIOR VALOR
+       -128                                                             127
+
+
+
+Operações aritméticas normalizam seus resultados nessa faixa (wraparound).
+
+
+  127 + 1     = -128
+  -128 - 1 =     127
+  NEG -128 = -128
+
+
+
+Literais usam 0 , 42 ou -42 , sempre entre -128 e 127 . Sinal positivo, zeros à
+esquerda e -0 não fazem parte da sintaxe.
+
+
+ Nome         Descrição
+
+
+ ACC          acumulador usado por transferência, aritmética e saltos
+
+ BAK          registrador auxiliar; acessível apenas por SAV e SWP
+
+ IPT          aponta para a próxima instrução; não é operando
+
+ NIL          lê como zero e descarta qualquer escrita
+
+
+
+No início de uma execução, ACC e BAK recebem zero e IPT aponta para a primeira
+instrução. BNK não é um nome de registrador válido.
+4. Formato de programa
+Um programa IDProc é texto UTF-8 dividido em seções de núcleo. A ordem das seções é
+livre.
+
+
+            [N0]
+            MOV INPUT ACC
+            ADD 1
+            MOV ACC SEND
+
+
+            [N1]
+            MOV RECV ACC
+            MOV ACC OUTPUT
+
+
+
+Uma seção ausente, ou sem instruções, representa um núcleo inativo. Cada seção pode
+ocorrer uma única vez e seu nome precisa corresponder a um núcleo da máquina.
+
+
+
+
+4.1 Linhas, comentários e rótulos
+
+Uma linha contém no máximo uma instrução. Linhas vazias não têm efeito. # inicia
+comentário até o fim da linha. Uma vírgula entre os operandos de MOV é aceita, mas os
+exemplos usam espaços.
+
+Rótulos são locais ao núcleo e terminam em dois-pontos:
+
+
+            INICIO: MOV INPUT ACC
+                      JEQ FIM
+                      MOV ACC OUTPUT
+                      JMP INICIO
+            FIM:      NOP
+
+
+
+Identificadores usam letras ASCII, dígitos e _ , sem iniciar por dígito. Instruções,
+registradores e NIL são palavras reservadas.
+5. Conjunto de instruções
+Cada instrução concluída consome um ciclo global. Uma instrução que aguarda
+comunicação permanece como a próxima instrução do núcleo até poder concluir.
+
+
+
+
+5.1 Transferência
+
+MOV origem destino
+
+MOV copia um valor; a origem não é alterada.
+
+
+ Origem                           Destino                    Exemplo
+
+ literal, ACC ou NIL               ACC ou NIL                MOV 12 ACC
+
+
+ porta de entrada                  ACC                       MOV INPUT ACC
+
+
+ ACC                              porta de saída             MOV ACC OUTPUT
+
+
+
+Não é permitida transferência direta porta → porta, literal → porta, porta → NIL ou
+NIL → porta. MOV NIL ACC zera ACC ; MOV ACC NIL descarta a cópia.
+
+
+
+
+5.2 Acumulador
+
+ Instrução                       Operação
+
+
+ SAV                             copia ACC para BAK
+
+ SWP                             troca ACC e BAK
+
+ NEG                             nega ACC , com wraparound
+
+ ADD operando                    soma literal ou ACC a ACC
+
+ SUB operando                    subtrai literal ou ACC de ACC
+ADD e SUB aceitam somente literal ou ACC .
+
+
+          MOV 7 ACC
+          SAV
+          ADD ACC        # ACC = 14
+          SUB 3          # ACC = 11
+          SWP            # ACC = 7; BAK = 11
+          NEG            # ACC = -7
+
+
+
+
+5.3 Controle de fluxo
+
+Instrução                        Salta quando
+
+
+ JMP rótulo                      sempre
+
+ JEQ rótulo                      ACC é igual a zero
+
+
+ JNZ rótulo                      ACC é diferente de zero
+
+
+ JGZ rótulo                      ACC é maior que zero
+
+
+ JLZ rótulo                      ACC é menor que zero
+
+
+ NOP                             nunca altera o estado
+6. Comunicação
+O envio e o recebimento de uma ligação interna formam uma única transferência
+sincronizada. Os dois núcleos concluem suas instruções no mesmo ciclo.
+
+
+   N0: MOV ACC DIR                     N1: MOV ESQ ACC
+               │                                 │
+               └──── transferência síncrona ──┘
+
+
+
+O valor recebido só pode ser usado pela instrução seguinte, no ciclo posterior. Se uma
+ponta não estiver pronta, a outra espera; os demais núcleos continuam.
+
+Um canal externo de entrada é uma fila ordenada. Cada leitura bem-sucedida consome o
+próximo valor; fila vazia faz a leitura esperar. Um canal externo de saída está sempre
+pronto para receber.
+
+Uma entrada externa pode ser compartilhada por várias portas. Duas leituras prontas da
+mesma fila no mesmo ciclo constituem erro de execução; a máquina não escolhe um
+leitor.
+7. Modelo de execução
+O ciclo é a unidade global de tempo. Em cada ciclo, cada núcleo conclui no máximo uma
+instrução. Registradores e transferências concluídos no ciclo são observados pelos demais
+núcleos somente no ciclo seguinte.
+
+
+  CICLO k       os núcleos observam o estado inicial
+                transferências compatíveis são identificadas
+                alterações concluídas são aplicadas juntas
+
+
+  CICLO k + 1   os núcleos observam o estado atualizado
+
+
+
+Duas instruções concluídas por núcleos diferentes no mesmo ciclo não consomem dois
+ciclos globais. O resultado não depende da ordem em que os núcleos são observados.
+8. Referência rápida
+ Grupo                             Instruções
+
+
+ transferência                     MOV
+
+
+ registradores                     SAV , SWP , NEG
+
+
+ aritmética                        ADD , SUB
+
+
+ saltos                            JMP , JEQ , JNZ , JGZ , JLZ
+
+
+ controle                          NOP
+
+
+
+
+ Diagnóstico                        Causa provável
+
+ literal fora de faixa              valor menor que -128 ou maior que 127
+
+  BNK desconhecido                  o nome correto é BAK
+
+  ADD INPUT inválido                portas são lidas por MOV porta ACC
+
+ porta incompatível                 sua direção não permite a operação
+
+ rótulo inexistente                 o destino não existe no mesmo núcleo
+
+ núcleo aguardando                  a outra ponta ainda não está pronta
+
+ disputa de entrada                 duas leituras ocorreram no mesmo ciclo
+
+
+
+
+IDPROC / INNOVATIVE DIGITAL PROCESSORS
+Manual de Referência do Processador · Edição 1
+

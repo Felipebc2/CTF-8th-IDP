@@ -1,0 +1,6 @@
+# Rodada 3 (14/11 08h) - Filtro de Sinal (enviado, VALIDO)
+[N0]
+LER: MOV INPUT ACC
+JGZ SAIDA
+JMP LER
+SAIDA: MOV ACC OUTPUT

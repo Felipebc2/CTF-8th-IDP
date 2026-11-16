@@ -1,0 +1,4 @@
+# Tick 12 - Eco controlado
+[N0]
+MOV INPUT ACC
+MOV ACC OUTPUT

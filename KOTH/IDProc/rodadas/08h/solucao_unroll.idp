@@ -1,0 +1,8 @@
+# Rodada 3 - variante desenrolada (mais instr, menos ciclos)
+[N0]
+S: MOV INPUT ACC
+JGZ O
+MOV INPUT ACC
+JGZ O
+JMP S
+O: MOV ACC OUTPUT
