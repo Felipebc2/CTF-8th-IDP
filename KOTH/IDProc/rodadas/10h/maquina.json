@@ -1,0 +1,8 @@
+{"cores": {"N0": {"INPUT_A": "in", "DIR": "out"},
+           "N2": {"INPUT_A": "in", "INPUT_B": "in", "ESQ": "in", "DIR": "in", "OUTPUT": "out"},
+           "N1": {"INPUT_B": "in", "ESQ": "out"}},
+ "links": [["N0.DIR", "N2.ESQ"], ["N1.ESQ", "N2.DIR"]],
+ "inputs": {"A": ["N0.INPUT_A", "N2.INPUT_A"], "B": ["N1.INPUT_B", "N2.INPUT_B"]},
+ "outputs": {"OUT": ["N2.OUTPUT"]},
+ "tests": [{"A": [10,11,12,13,14,15], "B": [50,51,52,53,54,55], "OUT": [11,49,12,50,13,51,14,52,15,53,16,54]},
+           {"A": [127,-128,0,-1], "B": [-128,127,0,1], "OUT": [-128,127,-127,126,1,-1,0,0]}]}

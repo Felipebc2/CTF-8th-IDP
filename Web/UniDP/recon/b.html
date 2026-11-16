@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UniDP · Portal do Aluno</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="login-body">
+  
+
+  
+    <p class="flash">Usuário ou senha inválidos.</p>
+  
+
+  <main class="page">
+<section class="login-page">
+  <div class="login-logo">uni<span>DP</span></div>
+  <form class="portal-login" method="post">
+    <h1>Portal do Aluno</h1>
+    <div class="login-field"><span aria-hidden="true">◉</span><input name="username" placeholder="Usuário" required></div>
+    <div class="login-field"><span aria-hidden="true">●</span><input type="password" name="password" placeholder="Senha" required></div>
+    <input type="hidden" name="csrf" value="x_kcWkp4kPg59HHO1IaieiHV5CZdku45">
+    <button class="button button-primary" type="submit">Acessar</button>
+    <a href="/forgot-password">Esqueceu sua senha?</a>
+    <a href="/register">Cadastre-se</a>
+    <p>Ou acesse via <a href="#">Microsoft Teams</a></p>
+  </form>
+</section>
+</main>
+</body>
+</html>

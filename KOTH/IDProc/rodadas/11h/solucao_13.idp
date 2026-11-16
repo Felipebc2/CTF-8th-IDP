@@ -1,0 +1,16 @@
+[N0]
+mov input_a, acc
+mov acc, dir
+[N2]
+ck: mov dir, acc
+jgz ok
+mov esq, acc
+mov dir, acc
+jgz ok
+mov esq, acc
+jmp ck
+ok: mov esq, acc
+mov acc, output
+[N1]
+mov input_b, acc
+mov acc, esq

@@ -46,3 +46,12 @@ core.*
 *~
 
 # Challenge artifacts over GitHub's 100 MB limit (sha256 in each WRITEUP.md)
+
+# Re-derivable from the challenge zip (jadx output, extracted APK)
+Rev/Zoom/out/
+Rev/Zoom/chall/
+Rev/Inclinacao/work/
+
+# Session cookie jars from recon (live session tokens)
+cj.txt
+cookies.txt

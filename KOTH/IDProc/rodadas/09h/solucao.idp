@@ -1,0 +1,10 @@
+# Rodada 4 (14/11 09h) - Pipeline aritmetico
+[N0]
+MOV INPUT ACC
+ADD ACC
+MOV ACC DIR
+
+[N1]
+MOV ESQ ACC
+ADD 1
+MOV ACC OUTPUT

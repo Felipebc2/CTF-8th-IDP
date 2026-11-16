@@ -35,10 +35,11 @@ Promover o desenvolvimento de habilidades técnicas em Segurança da Informaçã
 - **3.3.** Os desafios poderão envolver web, forense, engenharia reversa, programação, criptografia, exploração de binários, OSINT, ARG e atividades práticas, em materiais disponibilizados ou autorizados pela organização.
 - **3.4.** A quantidade, a distribuição por categoria e a pontuação dos desafios serão definidas pela organização.
 - **3.5.** Os desafios poderão ser disponibilizados na plataforma de forma escalonada, no início ou no decorrer da competição, a critério da organização, que comunicará às equipes a liberação de novos desafios (pela plataforma ou pelos canais oficiais do evento).
-- **3.6.** As atividades presenciais do primeiro dia serão encerradas às 20h, com jantar, e retomadas às 08h do dia seguinte. A competição será obrigatoriamente pausada nesse intervalo. Não será permitida a continuidade dos desafios ou das submissões durante a madrugada, inclusive de forma remota.
-- **3.7.** A competição seguirá os horários abaixo, considerando o horário oficial de Brasília:
-  - 13 de novembro de 2026 (sexta-feira): início às 18h e suspensão das atividades às 20h, seguida de jantar.
-  - 14 de novembro de 2026 (sábado): retomada às 8h e encerramento da competição às 17h.
+- **3.6.** ~~As atividades presenciais do primeiro dia serão encerradas às 20h, com jantar, e retomadas às 08h do dia seguinte. A competição será obrigatoriamente pausada nesse intervalo. Não será permitida a continuidade dos desafios ou das submissões durante a madrugada, inclusive de forma remota.~~
+  **Alterado pela organização em 13/11/2026:** não há mais pausa noturna. A competição é contínua (24h), com desafios e submissões permitidos durante a noite.
+- **3.7.** A competição seguirá os horários abaixo, considerando o horário oficial de Brasília (**alterado em 13/11/2026**; a competição começou atrasada):
+  - Início: 13 de novembro de 2026 (sexta-feira), 18h.
+  - Encerramento: 14 de novembro de 2026 (sábado), 18h. Competição contínua, sem suspensão noturna.
 - **3.8.** Haverá workshops e treinamento prático durante o evento.
 
 ## 4. Regras da competição
@@ -71,18 +72,19 @@ Promover o desenvolvimento de habilidades técnicas em Segurança da Informaçã
 | 13/11/2026 | 14h | Início do credenciamento |
 | 13/11/2026 | 16h | Workshop |
 | 13/11/2026 | 18h | Início da competição |
-| 13/11/2026 | 20h | Encerramento das atividades do dia e jantar |
-| 14/11/2026 | 08h | Retomada das atividades e café da manhã |
+| 13/11/2026 | 20h | Jantar (competição segue, sem pausa — alteração de 13/11) |
+| 14/11/2026 | 08h | Café da manhã (competição segue) |
 | 14/11/2026 | 12h | Almoço |
 | 14/11/2026 | 16h | Coffee break |
-| 14/11/2026 | 17h | Premiação |
+| 14/11/2026 | 18h | Encerramento da competição (alteração de 13/11) |
+| 14/11/2026 | ~~17h~~ a confirmar | Premiação |
 | 14/11/2026 | 18h30 | Encerramento do evento |
 
 ## 8. Obrigações dos participantes
 
 - **8.1.** Manter postura respeitosa e cooperativa com participantes, mentores e organizadores, sem discriminação, preconceito ou assédio.
 - **8.2.** Preservar as instalações e os equipamentos disponibilizados. Danos causados deverão ser comunicados à organização, cabendo ao responsável assumir os reparos necessários, conforme apuração institucional.
-- **8.3.** Cumprir os prazos, horários, regras de segurança, orientações da organização e disposições deste regulamento, incluindo a pausa obrigatória durante a noite.
+- **8.3.** Cumprir os prazos, horários, regras de segurança, orientações da organização e disposições deste regulamento. ~~incluindo a pausa obrigatória durante a noite~~ (pausa noturna removida em 13/11/2026, ver 3.6).
 - **8.4.** Cooperar com a organização para a solução de problemas e o bom andamento do evento.
 
 ## 9. Disposições gerais

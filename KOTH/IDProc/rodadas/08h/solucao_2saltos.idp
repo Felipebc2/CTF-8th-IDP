@@ -1,0 +1,6 @@
+# Rodada 3 - variante 2 saltos
+[N0]
+S: MOV INPUT ACC
+JLZ S
+JEQ S
+MOV ACC OUTPUT

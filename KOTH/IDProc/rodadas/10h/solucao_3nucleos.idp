@@ -1,0 +1,13 @@
+[N0]
+pega: mov input_a, acc
+sub -1
+mov acc, dir
+[N2]
+ra: mov esq, acc
+mov acc, output
+mov dir, acc
+mov acc, output
+[N1]
+pegb: mov input_b, acc
+add -1
+mov acc, esq

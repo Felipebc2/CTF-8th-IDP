@@ -1,0 +1,1 @@
+window.portal=true;

@@ -4,15 +4,23 @@ Responda em português. Writeups em inglês.
 
 - Regulamento completo: `docs/regulamento.md` (fonte de verdade; casos omissos = organização)
 - Presencial, térreo do IDP Norte. Formato jeopardy, pontuação dinâmica, placar pode congelar no final
-- Janelas de competição (Brasília): **13/11 18h–20h** e **14/11 08h–17h**. Pausa obrigatória 20h–08h: nada de reto nem envio, nem remoto (3.6). Fora das janelas, Claude não trabalha em reto
+- Competição contínua de 24h (Brasília): **13/11 18h → 14/11 18h**, sem pausa noturna (3.6/3.7 alterados pela organização em 13/11). Reto, envio de flag e writeup permitidos a noite toda. Após 14/11 18h, Claude não trabalha em reto
 - Flag: `IDP{...}` (ex. `IDP{s0u_A_resposta}`), uma por desafio. Só sugerir flag confirmada, nunca chutada
 - Flag do regulamento (9.3): `IDP{L1_e_c0rc0rd0_3_v0u_s3Gu1R_0_c0mB1N4d0}`, usar conforme orientação da organização
 - Desempate: quem atingiu a pontuação final primeiro. Enviar flag assim que confirmada
 - Proibido compartilhar flags entre equipes ou receber ajuda de fora do time (4.4)
 
+## Resultado (evento encerrado)
+
+Time **NOP: 2º lugar, 13813 pts**, 53/54 retos (só My Little Plone ficou aberto, 0 solves geral), 12 first bloods, KotH IDProc 2º (1640). Pontos nos writeups = valor dinâmico final.
+
+## Credenciais
+
+Em `CLAUDE.local.md` (gitignored). Nunca colocar credenciais em arquivo rastreado.
+
 ## Estrutura
 
-`<Categoria>/<NomeDoChallenge>/` com `README.md` (card) + `WRITEUP.md` (segue `WRITEUP_TEMPLATE.md`) + artefatos/solve. Categorias: `Web`, `Crypto`, `Forensics`, `Pwn`, `Rev`, `PPC` (programação), `OSINT`, `ARG`, `Misc` (atividades práticas e o resto). Prints em `img/`. Ao mudar status de um reto, atualizar a tabela do `README.md` raiz. Artefatos >100 MB vão para o `.gitignore` (sha256 no writeup).
+`<Categoria>/<NomeDoChallenge>/` com `README.md` (card) + `WRITEUP.md` (segue `WRITEUP_TEMPLATE.md`) + artefatos/solve. Categorias (as da plataforma): `Crypto`, `JAIL`, `KOTH` (king of the hill), `Misc` (atividades práticas e o resto), `NET` (redes), `OSINT`, `PPC` (programação), `Pwn`, `Rev`, `Web`. Prints em `img/`. Ao mudar status de um reto, atualizar a tabela do `README.md` raiz. Artefatos >100 MB vão para o `.gitignore` (sha256 no writeup).
 
 ## Regras invioláveis
 
@@ -24,9 +32,6 @@ Responda em português. Writeups em inglês.
 
 Plugin `ctf-dispatch` habilitado neste projeto. O formato `IDP{...}` é gravado a cada sessão pelo hook `SessionStart` em `.claude/settings.local.json` (conferir com `/ctf-dispatch:setflag`).
 
-- **Durante a competição:** só `/dispatch <CATEGORIA> "<conceito/palavras-chave que o usuário já identificou>"`, como consulta ao Arsenal (documentação). Nunca passar enunciado completo nem artefatos. Parar no checkpoint humano e **nunca** aprovar `solver-*` (4.3.4).
-- **Após 14/11 17h:** uso livre (solvers incluídos) para revisar e documentar.
-
 ## Writeups
 
-Só depois do encerramento (14/11 17h) e com tudo concluído: `WRITEUP.md` por reto seguindo `WRITEUP_TEMPLATE.md`, em inglês, e tabela do `README.md` atualizada. Anonimizar credenciais reais e hosts de infra (`<HOST>`, `<USER>`, `<TOKEN>`); flags e valores derivados do reto ficam.
+`WRITEUP.md` por reto (seguindo `WRITEUP_TEMPLATE.md`, em inglês) pode ser escrito localmente assim que o reto for resolvido; evento encerrado, publicar/push liberado (só a pedido do usuário). Atualizar a tabela do `README.md` junto. Anonimizar credenciais reais e hosts de infra (`<HOST>`, `<USER>`, `<TOKEN>`); flags e valores derivados do reto ficam.

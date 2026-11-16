@@ -1,0 +1,10 @@
+{
+  "cores": {"N0": {"INPUT": "in", "OUTPUT": "out"}},
+  "links": [],
+  "inputs": {"IN": ["N0.INPUT"]},
+  "outputs": {"OUT": ["N0.OUTPUT"]},
+  "tests": [
+    {"IN": [8, -3], "OUT": [8, -3]},
+    {"IN": [-128, 127, 0, 1, -1], "OUT": [-128, 127, 0, 1, -1]}
+  ]
+}

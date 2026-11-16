@@ -1,0 +1,14 @@
+[N0]
+mov input_a, acc
+add acc
+add acc
+mov acc, dir
+[N2]
+mov esq, acc
+mov acc, output
+mov dir, acc
+mov acc, output
+[N1]
+mov input_b, acc
+neg
+mov acc, esq
