@@ -1,12 +1,12 @@
 <!--
-  Copy to <Category>/<ChallengeName>/WRITEUP.md (writeups in English, after the event only).
-  Typing SVG: replace CHALLENGE+NAME with the title (spaces become "+").
-  Difficulty: 🟢 EASY · 🟡 MEDIUM · 🔴 HARD · 🟣 INSANE
-  Status: ✅ SOLVED · ❌ UNSOLVED
-  Real credentials (platform logins, cookies, API keys, private keys) and infra hostnames:
-  anonymize as <HOST>, <USER>, <PASSWORD>, <TOKEN> (inside `code`).
-  Challenge-derived values (box passwords, flags) stay.
-  Sections that don't apply can be removed.
+  Copiar para <Categoria>/<NomeDoChallenge>/WRITEUP.md (writeups em português, só após o evento).
+  Typing SVG: trocar CHALLENGE+NAME pelo título (espaços viram "+").
+  Dificuldade: 🟢 FÁCIL · 🟡 MÉDIO · 🔴 DIFÍCIL · 🟣 INSANO
+  Status: ✅ RESOLVIDO · ❌ NÃO RESOLVIDO
+  Credenciais reais (logins da plataforma, cookies, chaves de API, chaves privadas) e hosts de infra:
+  anonimizar como <HOST>, <USER>, <PASSWORD>, <TOKEN> (dentro de `code`).
+  Valores derivados do reto (senhas de box, flags) ficam.
+  Seções que não se aplicam podem ser removidas.
 -->
 <div align="center">
 
@@ -14,39 +14,39 @@
 
 </div>
 
-# [Challenge Name] — [CATEGORY] · 🟢 EASY / 🟡 MEDIUM / 🔴 HARD / 🟣 INSANE
+# [Nome do Challenge] — [CATEGORIA] · 🟢 FÁCIL / 🟡 MÉDIO / 🔴 DIFÍCIL / 🟣 INSANO
 
-- **Status:** ✅ SOLVED / ❌ UNSOLVED — [one line on the current state]
-- **Points:** [earned] (dynamic scoring, value at solve time)
+- **Status:** ✅ RESOLVIDO / ❌ NÃO RESOLVIDO — [uma linha sobre o estado atual]
+- **Pontos:** [ganhos] (pontuação dinâmica, valor no momento do solve)
 - **Flag:** `IDP{...}`
-- **Attachment / Target:** `[file]` ([type]) / `<HOST>:<PORT>`
-- **Prompt:** *"[challenge text]"*
+- **Anexo / Alvo:** `[arquivo]` ([tipo]) / `<HOST>:<PORT>`
+- **Enunciado:** *"[texto do desafio]"*
 
 ---
 
 ## TL;DR
 
-1. [what the artifact / service is]
-2. [the key insight]
-3. [how the flag comes out]
+1. [o que é o artefato / serviço]
+2. [a sacada principal]
+3. [como a flag sai]
 
-## Analysis
+## Análise
 
-### [step / layer]
-[findings, offsets, keys, tables]
+### [passo / camada]
+[achados, offsets, chaves, tabelas]
 
-## What didn't work
+## O que não funcionou
 
-| Hypothesis | Result | Why |
+| Hipótese | Resultado | Por quê |
 |---|---|---|
-| [attempt] | ✗ | [evidence] |
+| [tentativa] | ✗ | [evidência] |
 
-## Conclusion
+## Conclusão
 
-[why it closed, or where it got stuck and what to try next]
+[por que fechou, ou onde travou e o que tentar em seguida]
 
 ---
 
-## Appendix — tools
+## Apêndice — ferramentas
 
-- `solve.py` — `python3 solve.py [args]`: [what it does]
+- `solve.py` — `python3 solve.py [args]`: [o que faz]

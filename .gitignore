@@ -1,5 +1,4 @@
 # AI / agent tooling
-.claude/
 .serena/
 .remember/
 .codex/
@@ -55,3 +54,7 @@ Rev/Inclinacao/work/
 # Session cookie jars from recon (live session tokens)
 cj.txt
 cookies.txt
+
+# Local agent settings (machine-specific; skills ARE tracked)
+.claude/settings.local.json
+.claude/skills/ctf-solver/references/capture-log.md

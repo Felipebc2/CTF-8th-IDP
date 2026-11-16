@@ -1,6 +1,6 @@
 # 8º Hackathon IDP — III Capture The Flag 2026.2
 
-Responda em português. Writeups em inglês.
+Responda em português. Writeups em português.
 
 - Regulamento completo: `docs/regulamento.md` (fonte de verdade; casos omissos = organização)
 - Presencial, térreo do IDP Norte. Formato jeopardy, pontuação dinâmica, placar pode congelar no final
@@ -22,6 +22,11 @@ Em `CLAUDE.local.md` (gitignored). Nunca colocar credenciais em arquivo rastread
 
 `<Categoria>/<NomeDoChallenge>/` com `README.md` (card) + `WRITEUP.md` (segue `WRITEUP_TEMPLATE.md`) + artefatos/solve. Categorias (as da plataforma): `Crypto`, `JAIL`, `KOTH` (king of the hill), `Misc` (atividades práticas e o resto), `NET` (redes), `OSINT`, `PPC` (programação), `Pwn`, `Rev`, `Web`. Prints em `img/`. Ao mudar status de um reto, atualizar a tabela do `README.md` raiz. Artefatos >100 MB vão para o `.gitignore` (sha256 no writeup).
 
+## Skills locais (`.claude/skills/`)
+
+- `ctf-challenge-flow` — processo de cada reto: ao começar cria pasta+branch padrão; ao terminar (só após 14/11 17h) escreve o `WRITEUP.md`, atualiza a tabela do `README.md` e abre o PR. Colada a estas regras.
+- `ctf-solver` — arsenal de técnicas por categoria (Web/Crypto/Forensics/Pwn/Rev/OSINT/ARG/PPC/Misc) + captação da técnica nova em `references/capture-log.md` ao fechar o reto. Complementa o `/dispatch`.
+
 ## Regras invioláveis
 
 1. NUNCA executar nada contra servidor/instância do reto, plataforma ou rede do evento (curl, nc, nmap, ssh, requests, browser...). Quem roda é o usuário.
@@ -34,4 +39,4 @@ Plugin `ctf-dispatch` habilitado neste projeto. O formato `IDP{...}` é gravado 
 
 ## Writeups
 
-`WRITEUP.md` por reto (seguindo `WRITEUP_TEMPLATE.md`, em inglês) pode ser escrito localmente assim que o reto for resolvido; evento encerrado, publicar/push liberado (só a pedido do usuário). Atualizar a tabela do `README.md` junto. Anonimizar credenciais reais e hosts de infra (`<HOST>`, `<USER>`, `<TOKEN>`); flags e valores derivados do reto ficam.
+Evento encerrado: publicar/push liberado (só a pedido do usuário). `WRITEUP.md` por reto seguindo `WRITEUP_TEMPLATE.md`, em português (os writeups já publicados em inglês ficam como estão), e tabela do `README.md` atualizada junto. Anonimizar credenciais reais e hosts de infra (`<HOST>`, `<USER>`, `<TOKEN>`); flags e valores derivados do reto ficam.
