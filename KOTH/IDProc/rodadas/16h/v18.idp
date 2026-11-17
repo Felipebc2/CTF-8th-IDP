@@ -1,0 +1,22 @@
+[N0]
+mov a, acc
+mov acc, dir
+[N1]
+mov b, acc
+jlz n
+mov esq, acc
+jmp s
+n: mov esq, acc
+neg
+s: mov acc, baixo
+[N2]
+mov c, acc
+mov acc, dir
+[N3]
+mov esq, acc
+jlz n
+mov cima, acc
+jmp s
+n: mov cima, acc
+neg
+s: mov acc, output

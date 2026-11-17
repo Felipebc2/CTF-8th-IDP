@@ -1,0 +1,19 @@
+[N0]
+mov a, acc
+mov acc, dir
+[N2]
+ck: mov dir, acc
+jgz bp
+jlz bn
+mov esq, acc
+jmp ck
+bp: mov esq, acc
+jgz out
+jmp ck
+bn: mov esq, acc
+jlz out
+jmp ck
+out: mov acc, output
+[N1]
+mov b, acc
+mov acc, esq

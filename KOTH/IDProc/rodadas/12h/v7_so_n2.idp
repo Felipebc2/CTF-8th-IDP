@@ -1,0 +1,10 @@
+[N0]
+[N2]
+mov input_a, acc
+add acc
+add acc
+mov acc, output
+mov input_b, acc
+neg
+mov acc, output
+[N1]

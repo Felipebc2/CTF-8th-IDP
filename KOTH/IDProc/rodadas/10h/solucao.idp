@@ -1,0 +1,7 @@
+[N2]
+na: mov input_a, acc
+sub -1
+mov acc, output
+nb: mov input_b, acc
+add -1
+mov acc, output

@@ -1,0 +1,10 @@
+# NOP - rodada 4, variante unica
+[N0]
+le: mov input, acc
+add acc
+mov acc, dir
+
+[N1]
+recebe: mov esq, acc
+sub -1
+mov acc, output
