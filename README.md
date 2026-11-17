@@ -12,7 +12,7 @@
   <b>Data:</b> 13/11/2026 18:00–20:00 e 14/11/2026 08:00–17:00 (horário de Brasília) · <b>Em andamento</b><br>
   <b>Regulamento:</b> <a href="docs/regulamento.md"><code>docs/regulamento.md</code></a>
 </p>
-<p>As tabelas (nomes, pontos e status) estão na seção em inglês abaixo. Todos os writeups seguem o <a href="WRITEUP_TEMPLATE.md"><code>WRITEUP_TEMPLATE.md</code></a>.</p>
+<p>As tabelas (nomes, pontos e status) estão na seção em inglês abaixo. Os writeups seguem a estrutura do <a href="WRITEUP_TEMPLATE.md"><code>WRITEUP_TEMPLATE.md</code></a>.</p>
 
 </details>
 
@@ -41,7 +41,12 @@
 <table>
   <tr><th>Challenge</th><th>Category</th><th>Diff</th><th>Pts</th><th>Status</th></tr>
   <tr><td><a href="docs/regulamento.md#9-disposições-gerais">Regulamento</a></td><td>Misc</td><td>🟢</td><td>—</td><td>✅</td></tr>
+  <tr><td><a href="Misc/mario-tower-client/WRITEUP.md">Mario Tower</a></td><td>Misc</td><td>—</td><td>184*</td><td>✅</td></tr>
+  <tr><td><a href="Misc/luigi-tower-client/WRITEUP.md">Luigi Tower</a></td><td>Misc</td><td>—</td><td>184*</td><td>✅</td></tr>
+  <tr><td><a href="Misc/super-mario-wall-client/WRITEUP.md">Super Mario Wall</a></td><td>Misc</td><td>—</td><td>323*</td><td>✅</td></tr>
+  <tr><td><a href="Jail/Pycomjail/WRITEUP.md">Pycomjail</a></td><td>Jail</td><td>—</td><td>184*</td><td>✅</td></tr>
   <!-- <tr><td><a href="Rev/ChallengeName/">Challenge Name</a></td><td>Rev</td><td>🟡</td><td>—</td><td>✅</td></tr> -->
 </table>
+<p>* Scores shown in the supplied event screenshots; scores at solve time are unconfirmed.</p>
 
 </div>
